@@ -129,9 +129,8 @@ class AnalyzersTests extends TestCase {
     public function testAnalysisManagerRangeRunnerFromOneToHundredWithAutoAssert()
     {
         $analysisManager = new AnalysisManager();
-        $analyzed = iterator_to_array($analysisManager->runWithRange(1, 20));
         
-        foreach ($analyzed as $number => $analysisResult) {
+        foreach ($analysisManager->runWithRange(1, 100) as $number => $analysisResult) {
             if ( ($number % 3 == 0) && ($number % 5 == 0) ) {
                 $this->assertEquals(
                     "Linianos", 
