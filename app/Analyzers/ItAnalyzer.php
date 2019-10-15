@@ -4,13 +4,14 @@ namespace App\Analyzers;
 
 class ItAnalyzer implements AnalyzerInterface {
 
-    public function run(int $number) : ?string
+    public function validate(int $number) : bool
     {
-        if ( ($number % 5) == 0 ) {
-            return "IT";
-        }
+        return ($number % 5) == 0;
+    }
 
-        return null;
+    public function result() : string
+    {
+        return "IT";
     }
 
 }

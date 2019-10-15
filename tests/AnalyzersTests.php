@@ -13,57 +13,69 @@ class AnalyzersTests extends TestCase {
     public function testLinianAnalyzer()
     {
         $analyzer = new LinianAnalyzer();
+        $this->assertTrue(
+            $analyzer->validate(15),
+            'Failed asserting that 15 analyzed by LinianAnalyzer should return true'
+        );
         $this->assertEquals(
             "Linianos", 
-            $analyzer->run(15), 
-            'Failed asserting that 15 analyzed by LinianAnalyzer should return "Linianos"'
+            $analyzer->result(), 
+            'Failed asserting that the result method of LinianAnalyzer should return "Linianos"'
         );
     }
 
     public function testLinianAnalyzerWithWrongNumber()
     {
         $analyzer = new LinianAnalyzer();
-        $this->assertNull(
-            $analyzer->run(1), 
-            'Failed asserting that 1 analyzed by LinianAnalyzer should return null'
+        $this->assertFalse(
+            $analyzer->validate(1),
+            'Failed asserting that 15 analyzed by LinianAnalyzer should return false'
         );
     }
 
     public function testItAnalyzer()
     {
         $analyzer = new ItAnalyzer();
+        $this->assertTrue(
+            $analyzer->validate(15),
+            'Failed asserting that 15 analyzed by ItAnalyzer should return true'
+        );
         $this->assertEquals(
-            "IT",
-            $analyzer->run(15),
-            'Failed asserting that 15 analyzed by ItAnalyzer should return "IT"'
+            "IT", 
+            $analyzer->result(), 
+            'Failed asserting that the result method of ItAnalyzer should return "IT"'
         );
     }
 
     public function testItAnalyzerWithWrongNumber()
     {
         $analyzer = new ItAnalyzer();
-        $this->assertNull(
-            $analyzer->run(12),
-            'Failed asserting that 12 analyzed by ItAnalyzer should return null'
+        $this->assertFalse(
+            $analyzer->validate(12),
+            'Failed asserting that 15 analyzed by ItAnalyzer should return false'
         );
     }
 
     public function testLinioAnalyzer()
     {
         $analyzer = new LinioAnalyzer();
+        $this->assertTrue(
+            $analyzer->validate(15),
+            'Failed asserting that 15 analyzed by LinioAnalyzer should return true'
+        );
         $this->assertEquals(
-            "Linio",
-            $analyzer->run(15),
-            'Failed asserting that 15 analyzed by LinioAnalyzer should return "Linio"'
+            "Linio", 
+            $analyzer->result(), 
+            'Failed asserting that the result method of LinioAnalyzer should return "Linio"'
         );
     }
 
     public function testLinioAnalyzerWithWrongNumber()
     {
         $analyzer = new LinioAnalyzer();
-        $this->assertNull(
-            $analyzer->run(7),
-            'Failed asserting that 7 analyzed by LinioAnalyzer should return null'
+        $this->assertFalse(
+            $analyzer->validate(7),
+            'Failed asserting that 7 analyzed by LinioAnalyzer should return false'
         );
     }
 

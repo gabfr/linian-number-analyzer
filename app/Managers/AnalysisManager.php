@@ -41,8 +41,8 @@ class AnalysisManager {
         $analysisResult = null;
         for ($i = $from; $i <= $to; $i++) {
             foreach ($this->analyzers as $analyzer) {
-                if (!is_null($analysisResult = $analyzer->run($i))) {
-                    yield $i => $analysisResult;
+                if ($analyzer->validate($i)) {
+                    yield $i => $analyzer->result();
                     break;
                 }
             }

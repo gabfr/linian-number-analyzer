@@ -3,14 +3,15 @@
 namespace App\Analyzers;
 
 class LinioAnalyzer implements AnalyzerInterface {
-
-    public function run(int $number) : ?string
+    
+    public function validate(int $number) : bool
     {
-        if ( ($number % 3) == 0 ) {
-            return "Linio";
-        }
+        return ($number % 3) == 0;
+    }
 
-        return null;
+    public function result() : string
+    {
+        return "Linio";
     }
 
 }

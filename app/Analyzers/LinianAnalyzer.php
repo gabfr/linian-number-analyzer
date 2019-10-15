@@ -4,13 +4,14 @@ namespace App\Analyzers;
 
 class LinianAnalyzer implements AnalyzerInterface {
 
-    public function run(int $number) : ?string
+    public function validate(int $number) : bool
     {
-        if ( ($number % 3) == 0 && ($number % 5) == 0 ) {
-            return "Linianos";
-        }
+        return ($number % 3) == 0 && ($number % 5) == 0;
+    }
 
-        return null;
+    public function result() : string
+    {
+        return "Linianos";
     }
 
 }
