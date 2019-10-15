@@ -18,10 +18,12 @@ operators or `else`.
 # Solution
 
 The solution purpose is to implement the described rules above with pre-defined analyzers. 
+
 This way we can concentrate each analysis in a self-contained class with a common contract with other analyzers.
+
 This contract is made to receive an integer and return a simple string with the analysis result.
-In case the analyzer is not the right one for the number, the AnalysisManager will try to run the next Analyzers until he finds one that returns the analysis result.
-For that reason we will have a Fallback analyzer called DecimalFallbackAnalyzer.
+
+In case the analyzer is not the right one for the number, the Analyzer will return `null` and the AnalysisManager will try to run the next Analyzers until he finds one that returns the analysis result. For that reason we will have a Fallback analyzer called DecimalFallbackAnalyzer.
 
 ## Running the Analyzer
 
