@@ -37,11 +37,10 @@ class AnalysisManager {
         if ($from > $to) {
             throw new \Exception('The specified range is not reachable (from > to)');
         }
-
-        $analysisResult = null;
+        
         for ($i = $from; $i <= $to; $i++) {
             foreach ($this->analyzers as $analyzer) {
-                if ($analyzer->validate($i)) {
+                if ($analyzer->validate($i) == 0) {
                     yield $i => $analyzer->result();
                     break;
                 }

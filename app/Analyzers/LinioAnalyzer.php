@@ -4,9 +4,9 @@ namespace App\Analyzers;
 
 class LinioAnalyzer implements AnalyzerInterface {
     
-    public function validate(int $number) : bool
+    public function validate(int $number) : int
     {
-        return ($number % 3) == 0;
+        return $number % 3;
     }
 
     public function result() : string

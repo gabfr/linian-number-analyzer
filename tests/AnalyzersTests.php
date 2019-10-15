@@ -13,9 +13,10 @@ class AnalyzersTests extends TestCase {
     public function testLinianAnalyzer()
     {
         $analyzer = new LinianAnalyzer();
-        $this->assertTrue(
+        $this->assertEquals(
+            0,
             $analyzer->validate(15),
-            'Failed asserting that 15 analyzed by LinianAnalyzer should return true'
+            'Failed asserting that 15 analyzed by LinianAnalyzer should return 0'
         );
         $this->assertEquals(
             "Linianos", 
@@ -27,18 +28,20 @@ class AnalyzersTests extends TestCase {
     public function testLinianAnalyzerWithWrongNumber()
     {
         $analyzer = new LinianAnalyzer();
-        $this->assertFalse(
+        $this->assertNotEquals(
+            0,
             $analyzer->validate(1),
-            'Failed asserting that 15 analyzed by LinianAnalyzer should return false'
+            'Failed asserting that 15 analyzed by LinianAnalyzer should not return 0'
         );
     }
 
     public function testItAnalyzer()
     {
         $analyzer = new ItAnalyzer();
-        $this->assertTrue(
+        $this->assertEquals(
+            0,
             $analyzer->validate(15),
-            'Failed asserting that 15 analyzed by ItAnalyzer should return true'
+            'Failed asserting that 15 analyzed by ItAnalyzer should return 0'
         );
         $this->assertEquals(
             "IT", 
@@ -50,18 +53,20 @@ class AnalyzersTests extends TestCase {
     public function testItAnalyzerWithWrongNumber()
     {
         $analyzer = new ItAnalyzer();
-        $this->assertFalse(
+        $this->assertNotEquals(
+            0,
             $analyzer->validate(12),
-            'Failed asserting that 15 analyzed by ItAnalyzer should return false'
+            'Failed asserting that 15 analyzed by ItAnalyzer should not return 0'
         );
     }
 
     public function testLinioAnalyzer()
     {
         $analyzer = new LinioAnalyzer();
-        $this->assertTrue(
+        $this->assertEquals(
+            0,
             $analyzer->validate(15),
-            'Failed asserting that 15 analyzed by LinioAnalyzer should return true'
+            'Failed asserting that 15 analyzed by LinioAnalyzer should return 0'
         );
         $this->assertEquals(
             "Linio", 
@@ -73,9 +78,10 @@ class AnalyzersTests extends TestCase {
     public function testLinioAnalyzerWithWrongNumber()
     {
         $analyzer = new LinioAnalyzer();
-        $this->assertFalse(
+        $this->assertNotEquals(
+            0,
             $analyzer->validate(7),
-            'Failed asserting that 7 analyzed by LinioAnalyzer should return false'
+            'Failed asserting that 7 analyzed by LinioAnalyzer should not return 0'
         );
     }
 
