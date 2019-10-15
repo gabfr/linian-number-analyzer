@@ -25,7 +25,11 @@ This contract is made to receive an integer and return a simple string with the 
 
 In case the analyzer is not the right one for the number, the Analyzer will return `null` and the AnalysisManager will try to run the next Analyzers until he finds one that returns the analysis result. For that reason we will have a Fallback analyzer called DecimalFallbackAnalyzer.
 
-## Running the Analyzer
+## Getting started
+
+Before running the analyzer, you will need to install the project dependencies with `composer install`.
+
+### Running the Analyzer
 
 By default the analyzer will run in the range from 1 to 100, you can run it with this simple command:
 
